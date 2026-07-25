@@ -70,10 +70,10 @@ season:"November - April",
 price:"₹59,999"
 },
 
-Tokyo:{
-title:"Tokyo",
-image:"images/tokyo.jpg",
-description:"A perfect mix of modern technology and culture.",
+Japan:{
+title:"Japan",
+image:"images/japan.jpg",
+description:"Experience futuristic cities, ancient temples, cherry blossoms and rich culture.",
 rating:"4.9 / 5",
 location:"Japan",
 season:"March - May",
@@ -90,24 +90,34 @@ season:"December - March",
 price:"₹1,09,999"
 },
 
-Kashmir:{
-title:"Kashmir",
-image:"images/kashmir.jpg",
-description:"Paradise on Earth with snow-covered mountains.",
-rating:"4.9 / 5",
-location:"India",
-season:"March - October",
-price:"₹24,999"
+Dubai:{
+title:"Dubai",
+image:"images/Dubai.jpg",
+description:"Luxury shopping, iconic skyscrapers and unforgettable desert adventures.",
+rating:"4.8 / 5",
+location:"United Arab Emirates",
+season:"November - March",
+price:"₹69,999"
 },
 
-"New York":{
-title:"New York",
-image:"images/newyork.jpg",
-description:"Explore Times Square and the Statue of Liberty.",
+Rome:{
+title:"Rome",
+image:"images/rome.jpg",
+description:"Explore ancient history, stunning architecture and authentic Italian cuisine.",
 rating:"4.8 / 5",
-location:"USA",
+location:"Italy",
 season:"April - June",
-price:"₹1,19,999"
+price:"₹79,999"
+},
+
+Santorini:{
+title:"Santorini",
+image:"images/santorini.jpg",
+description:"Relax on whitewashed cliffs overlooking the crystal-blue Aegean Sea.",
+rating:"4.9 / 5",
+location:"Greece",
+season:"May - September",
+price:"₹84,999"
 }
 
 };
