@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>TravelEase</title>
+</head>
+
+<body class="bg-slate-50">
+    <!-- Navbar -->
+
+<nav class="fixed w-full bg-white shadow-md z-50">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="flex justify-between items-center h-20">
+
+            <!-- Logo -->
+
+            <h1 class="text-3xl font-bold text-sky-500">
+                TravelEase
+            </h1>
+
+            <!-- Desktop Menu -->
+
+            <ul class="hidden md:flex gap-8 font-medium">
+
+                <li><a href="#home" class="hover:text-sky-500 transition">Home</a></li>
+
+                <li><a href="#destinations" class="hover:text-sky-500 transition">Destinations</a></li>
+
+                <li><a href="#packages" class="hover:text-sky-500 transition">Packages</a></li>
+
+                <li><a href="#gallery" class="hover:text-sky-500 transition">Gallery</a></li>
+
+                <li><a href="#reviews" class="hover:text-sky-500 transition">Reviews</a></li>
+
+                <li><a href="#contact" class="hover:text-sky-500 transition">Contact</a></li>
+
+            </ul>
+
+            <!-- Button -->
+
+            <button class="hidden md:block bg-sky-500 text-white px-6 py-2 rounded-lg hover:bg-sky-600 transition">
+
+                Book Now
+
+            </button>
+
+            <!-- Mobile Menu Button -->
+
+            <i class="fa-solid fa-bars text-2xl md:hidden cursor-pointer"></i>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- Hero Section -->
+
+<section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+
+        <source src="videos/hero-video.mp4" type="video/mp4">
+
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center px-6">
+
+        <h1 class="text-6xl md:text-7xl font-bold text-white mb-6">
+            Discover Your Next Adventure
+        </h1>
+
+        <p class="text-xl text-white mb-8">
+            Discover breathtaking destinations and unforgettable experiences.
+        </p>
+
+        <div class="space-x-4">
+
+            <a href="#destinations"
+               class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-lg transition">
+                Explore
+            </a>
+
+            <a href="#packages"
+               class="bg-white text-sky-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition">
+                Book Now
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Search Section -->
+
+<section class="bg-white py-12 shadow-lg -mt-16 relative z-30">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
+
+            <!-- Destination -->
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Where do you want to go?"
+                class="border rounded-lg px-4 py-3 focus:ring-2 focus:ring-sky-400 outline-none">
+
+            <!-- Check In -->
+
+            <input
+                type="date"
+                class="border rounded-lg px-4 py-3 focus:ring-2 focus:ring-sky-400 outline-none">
+
+            <!-- Check Out -->
+
+            <input
+                type="date"
+                class="border rounded-lg px-4 py-3 focus:ring-2 focus:ring-sky-400 outline-none">
+
+            <!-- Guests -->
+
+            <select class="border rounded-lg px-4 py-3 focus:ring-2 focus:ring-sky-400 outline-none">
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5+ Guests</option>
+            </select>
+
+            <!-- Search Button -->
+
+            <button
+                id="searchBtn"
+                class="bg-sky-500 hover:bg-sky-600 text-white rounded-lg font-semibold">
+
+                Search
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Popular Destinations -->
+
+<section id="destinations" class="py-24 bg-slate-100">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="section-title">
+
+            Popular Destinations
+
+        </h2>
+
+        <p class="section-subtitle">
+
+            Discover the most loved places around the world.
+
+        </p>
+
+        <div id="destinationContainer"
+        class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<div class="destination-card bg-white rounded-xl shadow-lg overflow-hidden">
+
+    <img src="images/goa.jpg"
+    class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-2">
+
+            Goa
+
+        </h3>
+
+        <p class="text-gray-600 mb-4">
+
+            Beaches, nightlife and unforgettable sunsets.
+
+        </p>
+
+        <button
+            class="exploreBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600">
+            Explore
+        </button>
+
+    </div>
+
+</div>
+<div class="destination-card bg-white rounded-xl shadow-lg overflow-hidden">
+
+    <img src="images/bali.jpg"
+    class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-2">
+
+            Bali
+
+        </h3>
+
+        <p class="text-gray-600 mb-4">
+
+            Tropical paradise.
+
+        </p>
+
+        <button
+            class="exploreBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600">
+            Explore
+        </button>
+
+    </div>
+
+</div>
+<div class="destination-card bg-white rounded-xl shadow-lg overflow-hidden">
+
+    <img src="images/paris.jpg"
+    class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-2">
+
+            Paris
+
+        </h3>
+
+        <p class="text-gray-600 mb-4">
+
+            City of love and lights.
+
+        </p>
+
+        <button
+            class="exploreBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600">
+            Explore
+        </button>
+
+    </div>
+
+</div>
+<div class="destination-card bg-white rounded-xl shadow-lg overflow-hidden">
+
+    <img src="images/maldives.jpg"
+    class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-2">
+
+            Maldives
+
+        </h3>
+
+        <p class="text-gray-600 mb-4">
+
+            Crystal clear waters and luxury resorts.
+
+        </p>
+
+        <button
+            class="exploreBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600">
+            Explore
+        </button>
+
+    </div>
+
+</div>
+<div class="destination-card bg-white rounded-xl shadow-lg overflow-hidden">
+
+    <img src="images/japan.jpg"
+    class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-2">
+
+            Japan
+
+        </h3>
+
+        <p class="text-gray-600 mb-4">
+
+            Mount fuji, cherry blossoms ,rich culture and anime world.
+
+        </p>
+
+        <button
+            class="exploreBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600">
+            Explore
+        </button>
+
+    </div>
+
+</div>
+<div class="destination-card bg-white rounded-xl shadow-lg overflow-hidden">
+
+    <img src="images/switzerland.jpg"
+    class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-2">
+
+            Switzerland
+
+        </h3>
+
+        <p class="text-gray-600 mb-4">
+
+            Snowy mountains, lakes and scenic beauty.
+
+        </p>
+
+        <button
+            class="exploreBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600">
+            Explore
+        </button>
+
+    </div>
+
+</div>
+<div class="destination-card bg-white rounded-xl shadow-lg overflow-hidden">
+
+    <img src="images/dubai.jpg"
+    class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-2">
+
+            Dubai
+
+        </h3>
+
+        <p class="text-gray-600 mb-4">
+
+            Luxury, shopping and desert adventures.
+
+        </p>
+
+        <button
+        class="bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600">
+
+            Explore
+
+        </button>
+
+    </div>
+
+</div>
+<div class="destination-card bg-white rounded-xl shadow-lg overflow-hidden">
+
+    <img src="images/rome.jpg"
+    class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-2">
+
+            Rome
+
+        </h3>
+
+        <p class="text-gray-600 mb-4">
+
+            Walk through history with iconic landmarks, delicious cuisine, and timeless culture.
+
+        </p>
+
+        <button
+        class="bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600">
+
+            Explore
+
+        </button>
+
+    </div>
+
+</div>
+<div class="destination-card bg-white rounded-xl shadow-lg overflow-hidden">
+
+    <img src="images/santorini.jpg"
+    class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-2">
+            Santorini
+        </h3>
+
+        <p class="text-gray-600 mb-4">
+            Relax on stunning cliffs overlooking the crystal-blue Aegean Sea.
+        </p>
+
+        <button class="exploreBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600">
+            Explore
+        </button>
+
+    </div>
+
+</div>
+        </div>
+    </div>
+</section>
+
+<!-- Travel Packages -->
+
+<section id="packages" class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="section-title">
+            Best Travel Packages
+        </h2>
+
+        <p class="section-subtitle">
+            Choose from our handpicked holiday packages.
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="package-card bg-white rounded-xl shadow-lg overflow-hidden relative">
+
+    <!-- Discount Badge -->
+    <span class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+        20% OFF
+    </span>
+
+    <img src="images/bali-package.jpg"
+         class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-3">
+            Bali Escape
+        </h3>
+
+        <div class="space-y-2 text-gray-600">
+
+            <p><i class="fa-solid fa-calendar-days text-sky-500"></i> 5 Days / 4 Nights</p>
+
+            <p><i class="fa-solid fa-location-dot text-sky-500"></i> Bali, Indonesia</p>
+
+            <p><i class="fa-solid fa-star text-yellow-400"></i> 4.9 Rating</p>
+
+        </div>
+
+        <div class="flex justify-between items-center mt-6">
+
+            <span class="text-3xl font-bold text-sky-500">
+                ₹34,999
+            </span>
+
+            <button class="bookBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600 transition">
+                Book Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="package-card bg-white rounded-xl shadow-lg overflow-hidden relative">
+
+    <!-- Discount Badge -->
+    <span class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+        15% OFF
+    </span>
+
+    <img src="images/tokyo-package.jpg"
+         class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-3">
+            Tokyo Explorer
+        </h3>
+
+        <div class="space-y-2 text-gray-600">
+
+            <p><i class="fa-solid fa-calendar-days text-sky-500"></i> 6 Days / 5 Nights</p>
+
+            <p><i class="fa-solid fa-location-dot text-sky-500"></i> Tokyo, Japan</p>
+
+            <p><i class="fa-solid fa-star text-yellow-400"></i> 4.9 Rating</p>
+
+        </div>
+
+        <div class="flex justify-between items-center mt-6">
+
+            <span class="text-3xl font-bold text-sky-500">
+                ₹89,999
+            </span>
+
+            <button class="bookBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600 transition">
+                Book Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="package-card bg-white rounded-xl shadow-lg overflow-hidden relative">
+
+    <!-- Discount Badge -->
+    <span class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+        22% OFF
+    </span>
+
+    <img src="images/paris-package.jpg"
+         class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-3">
+            European Highlights
+        </h3>
+
+        <div class="space-y-2 text-gray-600">
+
+            <p><i class="fa-solid fa-calendar-days text-sky-500"></i> 10 Days / 9 Nights</p>
+
+            <p><i class="fa-solid fa-location-dot text-sky-500"></i> Paris • Zurich • Rome</p>
+
+            <p><i class="fa-solid fa-star text-yellow-400"></i> 4.8 Rating</p>
+
+        </div>
+
+        <div class="flex justify-between items-center mt-6">
+
+            <span class="text-3xl font-bold text-sky-500">
+                ₹1,49,999
+            </span>
+
+            <button class="bookBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600 transition">
+                Book Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="package-card bg-white rounded-xl shadow-lg overflow-hidden relative">
+
+    <!-- Discount Badge -->
+    <span class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+        25% OFF
+    </span>
+
+    <img src="images/kashmir-package.jpg"
+         class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-3">
+            Kashmir Paradise Tour
+        </h3>
+
+        <div class="space-y-2 text-gray-600">
+
+            <p><i class="fa-solid fa-calendar-days text-sky-500"></i> 6 Days / 5 Nights</p>
+
+            <p><i class="fa-solid fa-location-dot text-sky-500"></i> Kashmir, India</p>
+
+            <p><i class="fa-solid fa-star text-yellow-400"></i> 4.8 Rating</p>
+
+        </div>
+
+        <div class="flex justify-between items-center mt-6">
+
+            <span class="text-3xl font-bold text-sky-500">
+                ₹39,999
+            </span>
+
+            <button class="bookBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600 transition">
+                Book Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="package-card bg-white rounded-xl shadow-lg overflow-hidden relative">
+
+    <!-- Discount Badge -->
+    <span class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+        18% OFF
+    </span>
+
+    <img src="images/maldives-package.jpg"
+         class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-3">
+            Maldives Premium
+        </h3>
+
+        <div class="space-y-2 text-gray-600">
+
+            <p><i class="fa-solid fa-calendar-days text-sky-500"></i> 5 Days / 4 Nights</p>
+
+            <p><i class="fa-solid fa-location-dot text-sky-500"></i> Maldives</p>
+
+            <p><i class="fa-solid fa-star text-yellow-400"></i> 5.0 Rating</p>
+
+        </div>
+
+        <div class="flex justify-between items-center mt-6">
+
+            <span class="text-3xl font-bold text-sky-500">
+                ₹79,999
+            </span>
+
+            <button class="bookBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600 transition">
+                Book Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="package-card bg-white rounded-xl shadow-lg overflow-hidden relative">
+
+    <!-- Discount Badge -->
+    <span class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+        17% OFF
+    </span>
+
+    <img src="images/newyork-package.jpg"
+         class="h-64 w-full object-cover">
+
+    <div class="p-6">
+
+        <h3 class="text-2xl font-bold mb-3">
+            New York City Experience
+        </h3>
+
+        <div class="space-y-2 text-gray-600">
+
+            <p><i class="fa-solid fa-calendar-days text-sky-500"></i> 6 Days / 5 Nights</p>
+
+            <p><i class="fa-solid fa-location-dot text-sky-500"></i> New York, USA</p>
+
+            <p><i class="fa-solid fa-star text-yellow-400"></i> 4.8 Rating</p>
+
+        </div>
+
+        <div class="flex justify-between items-center mt-6">
+
+            <span class="text-3xl font-bold text-sky-500">
+                ₹1,09,999
+            </span>
+
+            <button class="bookBtn bg-sky-500 text-white px-5 py-2 rounded-lg hover:bg-sky-600 transition">
+                Book Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Featured Offer -->
+
+<section class="py-24 bg-gradient-to-r from-sky-500 to-cyan-500">
+
+    <div class="max-w-6xl mx-auto px-6 text-center text-white">
+
+        <h2 class="text-5xl font-bold mb-6">
+
+            Summer Sale 🌴
+
+        </h2>
+
+        <p class="text-xl mb-8">
+
+            Get up to <span class="font-bold text-yellow-300">40% OFF</span>
+            on selected international destinations.
+
+        </p>
+
+        <button class="bookBtn bg-white text-sky-600 px-8 py-4 rounded-lg font-semibold hover:scale-105 transition">
+
+            Book Now
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Gallery -->
+
+<section id="gallery" class="py-24 bg-slate-100">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="section-title">
+            Travel Gallery
+        </h2>
+
+        <p class="section-subtitle">
+            Every journey tells a story. Explore moments captured by our travelers.
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            <img src="images/gallery1.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+
+            <img src="images/gallery2.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+
+            <img src="images/gallery3.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+
+            <img src="images/gallery4.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+
+            <img src="images/gallery5.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+
+            <img src="images/gallery6.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+
+            <img src="images/gallery7.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+
+            <img src="images/gallery8.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+
+        </div>
+
+    </div>
+
+<!-- Customer Reviews     -->
+
+</section>
+
+<section id="reviews" class="py-24 bg-white">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<h2 class="section-title">
+
+Happy Travelers
+
+</h2>
+
+<p class="section-subtitle">
+
+See what our customers say about us.
+
+</p>
+
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-slate-100 rounded-xl shadow-lg p-8">
+
+<img src="images/user1.jpg"
+class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+
+<h3 class="text-xl font-bold text-center">
+
+Sophia
+
+</h3>
+
+<p class="text-yellow-400 text-center text-lg">
+
+★★★★★
+
+</p>
+
+<p class="text-gray-600 text-center mt-4">
+
+"Our Bali trip was perfectly organized. Everything from flights to hotels exceeded expectations!"
+
+</p>
+
+</div>
+<div class="bg-slate-100 rounded-xl shadow-lg p-8">
+
+<img src="images/user2.jpg"
+class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+
+<h3 class="text-xl font-bold text-center">
+
+Ethan
+
+</h3>
+
+<p class="text-yellow-400 text-center text-lg">
+
+★★★★★
+
+</p>
+
+<p class="text-gray-600 text-center mt-4">
+
+"Our Bali trip was perfectly organized. Everything from flights to hotels exceeded expectations!"
+
+</p>
+
+</div>   
+<div class="bg-slate-100 rounded-xl shadow-lg p-8">
+
+<img src="images/user3.jpg"
+class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+
+<h3 class="text-xl font-bold text-center">
+
+Olivia
+
+</h3>
+
+<p class="text-yellow-400 text-center text-lg">
+
+★★★★★
+
+</p>
+
+<p class="text-gray-600 text-center mt-4">
+
+"Our Bali trip was perfectly organized. Everything from flights to hotels exceeded expectations!"
+
+</p>
+
+</div> 
+</div>
+
+</div>
+
+</section>
+
+<!-- About Us -->
+
+<section id="about" class="py-24 bg-slate-100">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+
+<div>
+
+<img src="images/about.jpg"
+class="rounded-xl shadow-xl">
+
+</div>
+
+<div>
+
+<h2 class="text-4xl font-bold mb-6">
+
+About TravelEase
+
+</h2>
+
+<p class="text-gray-600 leading-8">
+
+TravelEase is committed to creating unforgettable travel experiences.
+From relaxing beach vacations to thrilling adventures, we help travelers
+discover the world's most beautiful destinations with comfort and confidence.
+
+</p>
+
+<div class="grid grid-cols-3 gap-6 mt-8">
+
+<div>
+
+<h3 class="text-3xl font-bold text-sky-500">
+
+500+
+
+</h3>
+
+<p>Destinations</p>
+
+</div>
+
+<div>
+
+<h3 class="text-3xl font-bold text-sky-500">
+
+20K+
+
+</h3>
+
+<p>Happy Travelers</p>
+
+</div>
+
+<div>
+
+<h3 class="text-3xl font-bold text-sky-500">
+
+15+
+
+</h3>
+
+<p>Years Experience</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Contact Form -->
+
+<section id="contact" class="py-24 bg-white">
+
+<div class="max-w-4xl mx-auto px-6">
+
+<h2 class="section-title">
+
+Contact Us
+
+</h2>
+
+<p class="section-subtitle">
+
+We'd love to help plan your next adventure!
+
+</p>
+
+<form id="contactForm" class="space-y-6">
+
+<input
+type="text"
+placeholder="Full Name"
+class="w-full border p-4 rounded-lg">
+
+<input
+type="email"
+placeholder="Email Address"
+class="w-full border p-4 rounded-lg">
+
+<input
+type="text"
+placeholder="Phone Number"
+class="w-full border p-4 rounded-lg">
+
+<textarea
+rows="5"
+placeholder="Your Message"
+class="w-full border p-4 rounded-lg"></textarea>
+
+<button
+class="bg-sky-500 text-white px-8 py-4 rounded-lg hover:bg-sky-600">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="bg-slate-900 text-white py-12">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="grid md:grid-cols-4 gap-10">
+
+<div>
+
+<h2 class="text-3xl font-bold text-sky-400">
+
+TravelEase
+
+</h2>
+
+<p class="mt-4 text-gray-400">
+
+Your trusted travel companion for unforgettable adventures.
+
+</p>
+
+</div>
+
+<div>
+
+<h3 class="font-semibold mb-4">
+
+Quick Links
+
+</h3>
+
+<ul class="space-y-2">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#packages">Packages</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3 class="font-semibold mb-4">
+
+Contact
+
+</h3>
+
+<p>📍 Bhubaneswar, Odisha</p>
+
+<p>📞 +91 98765 43210</p>
+
+<p>✉ info@travelease.com</p>
+
+</div>
+
+<div>
+
+<h3 class="font-semibold mb-4">
+
+Follow Us
+
+</h3>
+
+<div class="flex gap-5 text-2xl">
+
+<i class="fab fa-facebook hover:text-sky-400 cursor-pointer"></i>
+
+<i class="fab fa-instagram hover:text-pink-400 cursor-pointer"></i>
+
+<i class="fab fa-x-twitter hover:text-gray-300 cursor-pointer"></i>
+
+<i class="fab fa-youtube hover:text-red-500 cursor-pointer"></i>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="my-8 border-slate-700">
+
+<p class="text-center text-gray-400">
+
+© 2026 TravelEase. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+       
+<script src="script.js"></script>
+
+</body>
+</html>
