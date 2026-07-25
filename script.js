@@ -25,16 +25,145 @@ searchInput.addEventListener("keyup", () => {
 
 
 // =======================
-// Explore Buttons
+// Destination Details
 // =======================
 
-document.querySelectorAll(".exploreBtn").forEach(button => {
+const destinations = {
 
-    button.addEventListener("click", () => {
+Goa:{
+title:"Goa",
+image:"images/goa.jpg",
+description:"Golden beaches, exciting nightlife and water sports.",
+rating:"4.8 / 5",
+location:"India",
+season:"November - February",
+price:"₹14,999"
+},
 
-        alert("Explore feature coming soon!");
+Bali:{
+title:"Bali",
+image:"images/bali.jpg",
+description:"Tropical paradise with beautiful temples and beaches.",
+rating:"4.9 / 5",
+location:"Indonesia",
+season:"April - October",
+price:"₹34,999"
+},
 
-    });
+Paris:{
+title:"Paris",
+image:"images/paris.jpg",
+description:"The city of love featuring the Eiffel Tower.",
+rating:"4.8 / 5",
+location:"France",
+season:"April - June",
+price:"₹74,999"
+},
+
+Maldives:{
+title:"Maldives",
+image:"images/maldives.jpg",
+description:"Luxury water villas and crystal clear beaches.",
+rating:"4.9 / 5",
+location:"Maldives",
+season:"November - April",
+price:"₹59,999"
+},
+
+Tokyo:{
+title:"Tokyo",
+image:"images/tokyo.jpg",
+description:"A perfect mix of modern technology and culture.",
+rating:"4.9 / 5",
+location:"Japan",
+season:"March - May",
+price:"₹89,999"
+},
+
+Switzerland:{
+title:"Switzerland",
+image:"images/switzerland.jpg",
+description:"Beautiful Alps, lakes and scenic train rides.",
+rating:"4.9 / 5",
+location:"Switzerland",
+season:"December - March",
+price:"₹1,09,999"
+},
+
+Kashmir:{
+title:"Kashmir",
+image:"images/kashmir.jpg",
+description:"Paradise on Earth with snow-covered mountains.",
+rating:"4.9 / 5",
+location:"India",
+season:"March - October",
+price:"₹24,999"
+},
+
+"New York":{
+title:"New York",
+image:"images/newyork.jpg",
+description:"Explore Times Square and the Statue of Liberty.",
+rating:"4.8 / 5",
+location:"USA",
+season:"April - June",
+price:"₹1,19,999"
+}
+
+};
+
+// Modal
+
+const modal=document.getElementById("destinationModal");
+
+const modalImage=document.getElementById("modalImage");
+const modalTitle=document.getElementById("modalTitle");
+const modalDescription=document.getElementById("modalDescription");
+const modalRating=document.getElementById("modalRating");
+const modalLocation=document.getElementById("modalLocation");
+const modalSeason=document.getElementById("modalSeason");
+const modalPrice=document.getElementById("modalPrice");
+
+document.querySelectorAll(".exploreBtn").forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+const card=button.closest(".destination-card");
+
+const place=card.querySelector("h3").innerText;
+
+const data=destinations[place];
+
+modalImage.src=data.image;
+modalTitle.innerText=data.title;
+modalDescription.innerText=data.description;
+modalRating.innerText=data.rating;
+modalLocation.innerText=data.location;
+modalSeason.innerText=data.season;
+modalPrice.innerText=data.price;
+
+modal.classList.remove("hidden");
+modal.classList.add("flex");
+
+});
+
+});
+
+document.getElementById("closeModal").addEventListener("click",()=>{
+
+modal.classList.add("hidden");
+modal.classList.remove("flex");
+
+});
+
+modal.addEventListener("click",(e)=>{
+
+if(e.target===modal){
+
+modal.classList.add("hidden");
+modal.classList.remove("flex");
+
+}
 
 });
 
