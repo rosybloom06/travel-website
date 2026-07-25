@@ -24,23 +24,22 @@
 </head>
 
 <body class="bg-slate-50">
-    <!-- Navbar -->
 
-<nav class="fixed w-full bg-white shadow-md z-50">
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
 
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-[1500px] mx-auto h-20 flex items-center justify-between px-10">
 
-        <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <h1 class="text-3xl font-bold text-sky-500">
+            TravelEase
+        </h1>
 
-            <!-- Logo -->
+        <!-- Right Side -->
+        <div class="flex items-center gap-8">
 
-            <h1 class="text-3xl font-bold text-sky-500">
-                TravelEase
-            </h1>
-
-            <!-- Desktop Menu -->
-
-            <ul class="hidden md:flex gap-8 font-medium">
+            <!-- Menu -->
+            <ul class="hidden md:flex items-center gap-10 font-medium text-base">
 
                 <li><a href="#home" class="hover:text-sky-500 transition">Home</a></li>
 
@@ -57,18 +56,14 @@
             </ul>
 
             <!-- Button -->
-
-            <button class="hidden md:block bg-sky-500 text-white px-6 py-2 rounded-lg hover:bg-sky-600 transition">
-
+            <button class="hidden md:block bg-sky-500 text-white px-7 py-3 rounded-lg hover:bg-sky-600 transition">
                 Book Now
-
             </button>
 
-            <!-- Mobile Menu Button -->
-
-            <i class="fa-solid fa-bars text-2xl md:hidden cursor-pointer"></i>
-
         </div>
+
+        <!-- Mobile Icon -->
+        <i class="fa-solid fa-bars text-2xl md:hidden cursor-pointer"></i>
 
     </div>
 
@@ -79,9 +74,15 @@
 <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
 
     <!-- Background Video -->
-    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+    <video
+    id="heroVideo"
+    autoplay
+    muted
+    loop
+    playsinline
+    class="absolute top-0 left-0 w-full h-full object-cover">
 
-        <source src="videos/hero-video.mp4" type="video/mp4">
+    <source id="videoSource" src="" type="video/mp4">
 
     </video>
 
@@ -89,25 +90,26 @@
     <div class="absolute inset-0 bg-black/50"></div>
 
     <!-- Hero Content -->
-    <div class="relative z-10 text-center px-6">
 
-        <h1 class="text-6xl md:text-7xl font-bold text-white mb-6">
+    <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto">
+
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Discover Your Next Adventure
         </h1>
 
-        <p class="text-xl text-white mb-8">
+        <p class="text-xl text-white mb-8 max-w-3xl">
             Discover breathtaking destinations and unforgettable experiences.
         </p>
 
         <div class="space-x-4">
 
             <a href="#destinations"
-               class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-lg transition">
+                class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-lg transition text-xl font-semibold">
                 Explore
             </a>
-
+ 
             <a href="#packages"
-               class="bg-white text-sky-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition">
+                class="bg-white text-sky-600 hover:bg-gray-100 px-8 py-4 rounded-lg transition text-xl font-semibold">
                 Book Now
             </a>
 
@@ -123,29 +125,29 @@
 
     <div class="max-w-6xl mx-auto px-6">
 
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-5">
 
             <!-- Destination -->
 
-            <input
+          <input
                 type="text"
                 id="searchInput"
                 placeholder="Where do you want to go?"
-                class="border rounded-lg px-4 py-3 focus:ring-2 focus:ring-sky-400 outline-none">
-
-            <!-- Check In -->
-
-            <input
-                type="date"
-                class="border rounded-lg px-4 py-3 focus:ring-2 focus:ring-sky-400 outline-none">
-
-            <!-- Check Out -->
+                class="md:col-span-2 border rounded-lg px-4 py-3 focus:ring-2 focus:ring-sky-400 outline-none">
+           
+ <!-- Check In -->
 
             <input
                 type="date"
                 class="border rounded-lg px-4 py-3 focus:ring-2 focus:ring-sky-400 outline-none">
 
-            <!-- Guests -->
+<!-- Check Out -->
+
+            <input
+                type="date"
+                class="border rounded-lg px-4 py-3 focus:ring-2 focus:ring-sky-400 outline-none">
+
+    <!-- Guests -->
 
             <select class="border rounded-lg px-4 py-3 focus:ring-2 focus:ring-sky-400 outline-none">
                 <option>1 Guest</option>
@@ -155,7 +157,7 @@
                 <option>5+ Guests</option>
             </select>
 
-            <!-- Search Button -->
+<!-- Search Button -->
 
             <button
                 id="searchBtn"
@@ -175,7 +177,7 @@
 
 <section id="destinations" class="py-24 bg-slate-100">
 
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="w-full px-12">
 
         <h2 class="section-title">
 
