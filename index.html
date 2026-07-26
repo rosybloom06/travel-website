@@ -14,6 +14,9 @@
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -24,6 +27,32 @@
 </head>
 
 <body class="bg-slate-50">
+
+<!-- ================= Loading Screen ================= -->
+
+<div id="loader"
+class="fixed inset-0 bg-slate-900 flex flex-col items-center justify-center z-[9999]">
+
+    <h1 class="text-6xl font-bold text-sky-400 mb-6 animate-pulse">
+
+        TravelEase
+
+    </h1>
+
+    <div class="w-64 h-2 bg-gray-700 rounded-full overflow-hidden">
+
+        <div id="loadingBar"
+        class="h-full bg-sky-500 w-0"></div>
+
+    </div>
+
+    <p class="text-white mt-6 text-lg">
+
+        Loading your next adventure...
+
+    </p>
+
+</div>    
 
 <!-- Navbar -->
 <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
@@ -38,36 +67,65 @@
         <!-- Right Side -->
         <div class="flex items-center gap-8">
 
-            <!-- Menu -->
+    <!-- Menu -->
             <ul class="hidden md:flex items-center gap-10 font-medium text-base">
 
-                <li><a href="#home" class="hover:text-sky-500 transition">Home</a></li>
+                <li><a href="#home" class="nav-link hover:text-sky-500 transition">Home</a></li>
 
-                <li><a href="#destinations" class="hover:text-sky-500 transition">Destinations</a></li>
+                <li><a href="#destinations" class="nav-link hover:text-sky-500 transition">Destinations</a></li>
 
-                <li><a href="#packages" class="hover:text-sky-500 transition">Packages</a></li>
+                <li><a href="#packages" class="nav-link hover:text-sky-500 transition">Packages</a></li>
 
-                <li><a href="#gallery" class="hover:text-sky-500 transition">Gallery</a></li>
+                <li><a href="#gallery" class="nav-link hover:text-sky-500 transition">Gallery</a></li>
 
-                <li><a href="#reviews" class="hover:text-sky-500 transition">Reviews</a></li>
+                <li><a href="#reviews" class="nav-link hover:text-sky-500 transition">Reviews</a></li>
 
-                <li><a href="#contact" class="hover:text-sky-500 transition">Contact</a></li>
+                <li><a href="#about" class="nav-link hover:text-sky-500 transition">About</a></li>
+
+                <li><a href="#contact" class="nav-link hover:text-sky-500 transition">Contact</a></li>
 
             </ul>
 
             <!-- Button -->
-            <button class="hidden md:block bg-sky-500 text-white px-7 py-3 rounded-lg hover:bg-sky-600 transition">
+            <a href="#packages"
+            class="hidden md:block bg-sky-500 text-white px-7 py-3 rounded-lg hover:bg-sky-600 transition">
                 Book Now
-            </button>
+            </a>
 
         </div>
 
-        <!-- Mobile Icon -->
-        <i class="fa-solid fa-bars text-2xl md:hidden cursor-pointer"></i>
+<!-- Mobile Icon -->
+
+<button id="menuBtn" class="md:hidden text-2xl">
+
+    <i class="fa-solid fa-bars"></i>
+
+</button>        
 
     </div>
 
 </nav>
+
+<!-- Mobile Menu -->
+
+<div id="mobileMenu"
+class="fixed top-20 left-0 w-full bg-white shadow-lg hidden flex-col text-center z-40">
+
+    <a href="#home" class="py-4 border-b hover:bg-sky-100">Home</a>
+
+    <a href="#destinations" class="py-4 border-b hover:bg-sky-100">Destinations</a>
+
+    <a href="#packages" class="py-4 border-b hover:bg-sky-100">Packages</a>
+
+    <a href="#gallery" class="py-4 border-b hover:bg-sky-100">Gallery</a>
+
+    <a href="#reviews" class="py-4 border-b hover:bg-sky-100">Reviews</a>
+
+    <a href="#about" class="py-4 border-b hover:bg-sky-100">About</a>
+
+    <a href="#contact" class="py-4 hover:bg-sky-100">Contact</a>
+
+</div>
 
 <!-- Hero Section -->
 
@@ -175,7 +233,7 @@
 
 <!-- ================= Popular Destinations ================= -->
 
-<section id="destinations" class="py-24 bg-white">
+<section id="destinations" class="py-24 bg-white" data-aos="fade-up">
 
     <div class="max-w-7xl mx-auto px-6">
 
@@ -435,7 +493,7 @@
 
 <!-- Travel Packages -->
 
-<section id="packages" class="py-24 bg-white">
+<section id="packages" class="py-24 bg-white" data-aos="fade-up">
 
     <div class="max-w-7xl mx-auto px-6">
 
@@ -704,7 +762,8 @@
 <!-- Featured Offer Section -->
 <!-- ===================== -->
 
-<section class="py-24 bg-gradient-to-r from-sky-600 via-cyan-500 to-sky-500">
+<section class="py-24 bg-gradient-to-r from-sky-600 via-cyan-500 to-sky-500"
+data-aos="zoom-in">
 
     <div class="max-w-6xl mx-auto px-6 text-center text-white">
 
@@ -733,7 +792,7 @@
 
             <div class="bg-white/20 backdrop-blur-md rounded-xl px-8 py-5">
 
-                <h3 class="text-4xl font-bold">12</h3>
+                <h3 id="days" class="text-4xl font-bold">00</h3>
 
                 <p class="mt-2 text-lg">Days</p>
 
@@ -741,7 +800,7 @@
 
             <div class="bg-white/20 backdrop-blur-md rounded-xl px-8 py-5">
 
-                <h3 class="text-4xl font-bold">08</h3>
+                <h3 id="hours" class="text-4xl font-bold">00</h3>
 
                 <p class="mt-2 text-lg">Hours</p>
 
@@ -749,10 +808,19 @@
 
             <div class="bg-white/20 backdrop-blur-md rounded-xl px-8 py-5">
 
-                <h3 class="text-4xl font-bold">35</h3>
+                <h3 id="minutes" class="text-4xl font-bold">00</h3>
 
                 <p class="mt-2 text-lg">Minutes</p>
+            </div>
 
+            <div class="bg-white/20 backdrop-blur-md rounded-xl px-8 py-5">
+
+                <h3 id="seconds" class="text-4xl font-bold">00</h3>
+
+                <p class="mt-2 text-lg">
+
+                    Seconds
+                </p>
             </div>
 
         </div>
@@ -782,7 +850,8 @@
 
 <!-- Gallery -->
 
-<section id="gallery" class="py-24 bg-slate-100">
+<section id="gallery" class="py-24 bg-slate-100"
+data-aos="fade-up">
 
     <div class="max-w-7xl mx-auto px-6">
 
@@ -796,21 +865,21 @@
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-            <img src="images/gallery1.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+            <img src="images/gallery1.jpg" class="gallery-img rounded-xl h-64 w-full object-cover cursor-pointer hover:scale-105 transition duration-300">
 
-            <img src="images/gallery2.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+            <img src="images/gallery2.jpg" class="gallery-img rounded-xl h-64 w-full object-cover cursor-pointer hover:scale-105 transition duration-300">
 
-            <img src="images/gallery3.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+            <img src="images/gallery3.jpg" class="gallery-img rounded-xl h-64 w-full object-cover cursor-pointer hover:scale-105 transition duration-300">
 
-            <img src="images/gallery4.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+            <img src="images/gallery4.jpg" class="gallery-img rounded-xl h-64 w-full object-cover cursor-pointer hover:scale-105 transition duration-300">
 
-            <img src="images/gallery5.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+            <img src="images/gallery5.jpg" class="gallery-img rounded-xl h-64 w-full object-cover cursor-pointer hover:scale-105 transition duration-300">
 
-            <img src="images/gallery6.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+            <img src="images/gallery6.jpg" class="gallery-img rounded-xl h-64 w-full object-cover cursor-pointer hover:scale-105 transition duration-300">
 
-            <img src="images/gallery7.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+            <img src="images/gallery7.jpg" class="gallery-img rounded-xl h-64 w-full object-cover cursor-pointer hover:scale-105 transition duration-300">
 
-            <img src="images/gallery8.jpg" class="gallery-img rounded-xl h-64 w-full object-cover">
+            <img src="images/gallery8.jpg" class="gallery-img rounded-xl h-64 w-full object-cover cursor-pointer hover:scale-105 transition duration-300">
 
         </div>
 
@@ -820,7 +889,8 @@
 
 </section>
 
-<section id="reviews" class="py-24 bg-white">
+<section id="reviews" class="py-24 bg-white"
+data-aos="fade-up">
 
 <div class="max-w-7xl mx-auto px-6">
 
@@ -917,7 +987,8 @@ Olivia
 
 <!-- About Us -->
 
-<section id="about" class="py-24 bg-slate-100">
+<section id="about" class="py-24 bg-slate-100"
+data-aos="fade-right">
 
 <div class="max-w-7xl mx-auto px-6">
 
@@ -996,7 +1067,8 @@ discover the world's most beautiful destinations with comfort and confidence.
 
 <!-- Contact Form -->
 
-<section id="contact" class="py-24 bg-white">
+<section id="contact" class="py-24 bg-white"
+data-aos="fade-left">
 
 <div class="max-w-4xl mx-auto px-6">
 
@@ -1204,7 +1276,41 @@ class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
     </div>
 
 </div>
+
+<!-- Scroll To Top Button -->
+
+<button
+    id="scrollTopBtn"
+    class="hidden fixed bottom-8 right-8 bg-sky-500 hover:bg-sky-600 text-white w-14 h-14 rounded-full shadow-lg text-2xl z-50 transition">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- Gallery Lightbox -->
+
+<div
+    id="lightbox"
+    class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50">
+
+    <span
+        id="closeLightbox"
+        class="absolute top-6 right-8 text-white text-5xl cursor-pointer hover:text-red-400">
+
+        &times;
+
+    </span>
+
+    <img
+        id="lightboxImage"
+        src=""
+        class="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl">
+
+</div>
        
+<!-- AOS Library -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
 <script src="script.js"></script>
 
 </body>

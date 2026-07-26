@@ -232,3 +232,220 @@ videoSource.src = randomVideo;
 heroVideo.load();
 
 heroVideo.play();
+
+// =======================
+// Scroll To Top Button
+// =======================
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 500) {
+        scrollBtn.classList.remove("hidden");
+    } else {
+        scrollBtn.classList.add("hidden");
+    }
+
+});
+
+scrollBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+        behavior: "smooth"
+
+    });
+
+});
+
+// =======================
+// Countdown Timer
+// =======================
+
+const offerDate = new Date();
+
+offerDate.setDate(offerDate.getDate() + 12);
+
+const countdown = setInterval(() => {
+
+    const now = new Date().getTime();
+
+    const distance = offerDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days;
+
+    document.getElementById("hours").textContent = hours;
+
+    document.getElementById("minutes").textContent = minutes;
+
+    document.getElementById("seconds").textContent = seconds;
+
+    if(distance < 0){
+
+        clearInterval(countdown);
+
+        document.getElementById("days").textContent="00";
+        document.getElementById("hours").textContent="00";
+        document.getElementById("minutes").textContent="00";
+        document.getElementById("seconds").textContent="00";
+
+    }
+
+},1000);
+
+// =======================
+// Gallery Lightbox
+// =======================
+
+const galleryImages = document.querySelectorAll(".gallery-img");
+
+const lightbox = document.getElementById("lightbox");
+
+const lightboxImage = document.getElementById("lightboxImage");
+
+const closeLightbox = document.getElementById("closeLightbox");
+
+galleryImages.forEach(image => {
+
+    image.addEventListener("click", () => {
+
+        lightboxImage.src = image.src;
+
+        lightbox.classList.remove("hidden");
+
+    });
+
+});
+
+closeLightbox.addEventListener("click", () => {
+
+    lightbox.classList.add("hidden");
+
+});
+
+lightbox.addEventListener("click", (e) => {
+
+    if (e.target === lightbox) {
+
+        lightbox.classList.add("hidden");
+
+    }
+
+});
+
+// =======================
+// Loading Screen
+// =======================
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    const bar = document.getElementById("loadingBar");
+
+    bar.style.width = "100%";
+
+    setTimeout(() => {
+
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+
+            loader.style.display = "none";
+
+        },700);
+
+    },2000);
+
+});
+
+// =======================
+// AOS Animation
+// =======================
+
+AOS.init({
+
+    duration:1000,
+
+    once:true,
+
+    offset:100
+
+});
+
+// =======================
+// Mobile Menu
+// =======================
+
+const menuBtn = document.getElementById("menuBtn");
+
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("hidden");
+
+    mobileMenu.classList.toggle("flex");
+
+});
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.add("hidden");
+
+        mobileMenu.classList.remove("flex");
+
+    });
+
+});
+
+// =======================
+// Active Navbar
+// =======================
+
+const sections = document.querySelectorAll("section");
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+
+        const sectionHeight = section.clientHeight;
+
+        if (window.scrollY >= sectionTop) {
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
